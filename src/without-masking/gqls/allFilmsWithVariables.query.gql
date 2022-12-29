@@ -1,0 +1,11 @@
+#import './filmItem.fragment.gql'
+
+query allFilmsWithVariables($first: Int!) {
+  allFilms(first: $first) {
+    edges {
+      node {
+        ...FilmItem
+      }
+    }
+  }
+}
