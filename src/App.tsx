@@ -7,6 +7,8 @@ import FilmsJSWithClientPreset from "./client-preset-with-fragment-masking/compo
 import FilmsWithFragmentMasking from "./client-preset-with-fragment-masking/components/Films";
 import FilmsJSWithFragmentMasking from "./client-preset-with-fragment-masking/components/FilmsJS";
 
+import "./msw/demo/generate-a-film";
+
 function App() {
   return (
     <div className="App">
