@@ -13,28 +13,18 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel-plugin for production.
  */
 const documents = {
-    "\n  fragment Film_FilmFragment on Film {\n    id\n    title\n    releaseDate\n    producers\n    director\n  }\n": types.Film_FilmFragmentFragmentDoc,
-    "\n  query AllFilmsQuery($first: Int!) {\n    allFilms(first: $first) {\n      edges {\n        node {\n          id\n          ...Film_FilmFragment\n        }\n      }\n    }\n  }\n": types.AllFilmsQueryDocument,
-    "\n  fragment FilmJS_FilmFragment on Film {\n    id\n    title\n    releaseDate\n    producers\n    director\n  }\n": types.FilmJs_FilmFragmentFragmentDoc,
-    "\n  query AllFilmsJSQuery($first: Int!) {\n    allFilms(first: $first) {\n      edges {\n        node {\n          id\n          ...Film_FilmFragment\n        }\n      }\n    }\n  }\n": types.AllFilmsJsQueryDocument,
+    "query allFilmsWithVariables($first: Int!) {\n  allFilms(first: $first) {\n    edges {\n      node {\n        id\n        ...FilmItem\n      }\n    }\n  }\n}": types.AllFilmsWithVariablesDocument,
+    "fragment FilmItem on Film {\n  id\n  title\n  releaseDate\n  producers\n  director\n}": types.FilmItemFragmentDoc,
 };
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  fragment Film_FilmFragment on Film {\n    id\n    title\n    releaseDate\n    producers\n    director\n  }\n"): (typeof documents)["\n  fragment Film_FilmFragment on Film {\n    id\n    title\n    releaseDate\n    producers\n    director\n  }\n"];
+export function graphql(source: "query allFilmsWithVariables($first: Int!) {\n  allFilms(first: $first) {\n    edges {\n      node {\n        id\n        ...FilmItem\n      }\n    }\n  }\n}"): (typeof documents)["query allFilmsWithVariables($first: Int!) {\n  allFilms(first: $first) {\n    edges {\n      node {\n        id\n        ...FilmItem\n      }\n    }\n  }\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query AllFilmsQuery($first: Int!) {\n    allFilms(first: $first) {\n      edges {\n        node {\n          id\n          ...Film_FilmFragment\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query AllFilmsQuery($first: Int!) {\n    allFilms(first: $first) {\n      edges {\n        node {\n          id\n          ...Film_FilmFragment\n        }\n      }\n    }\n  }\n"];
-/**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function graphql(source: "\n  fragment FilmJS_FilmFragment on Film {\n    id\n    title\n    releaseDate\n    producers\n    director\n  }\n"): (typeof documents)["\n  fragment FilmJS_FilmFragment on Film {\n    id\n    title\n    releaseDate\n    producers\n    director\n  }\n"];
-/**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function graphql(source: "\n  query AllFilmsJSQuery($first: Int!) {\n    allFilms(first: $first) {\n      edges {\n        node {\n          id\n          ...Film_FilmFragment\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query AllFilmsJSQuery($first: Int!) {\n    allFilms(first: $first) {\n      edges {\n        node {\n          id\n          ...Film_FilmFragment\n        }\n      }\n    }\n  }\n"];
+export function graphql(source: "fragment FilmItem on Film {\n  id\n  title\n  releaseDate\n  producers\n  director\n}"): (typeof documents)["fragment FilmItem on Film {\n  id\n  title\n  releaseDate\n  producers\n  director\n}"];
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.

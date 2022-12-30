@@ -13,14 +13,14 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel-plugin for production.
  */
 const documents = {
-    "query allFilmsWithVariables($first: Int!) {\n  allFilms(first: $first) {\n    edges {\n      node {\n        ...FilmItem\n      }\n    }\n  }\n}": types.AllFilmsWithVariablesDocument,
+    "query allFilmsWithVariables($first: Int!) {\n  allFilms(first: $first) {\n    edges {\n      node {\n        id\n        ...FilmItem\n      }\n    }\n  }\n}": types.AllFilmsWithVariablesDocument,
     "fragment FilmItem on Film {\n  id\n  title\n  releaseDate\n  producers\n  director\n}": types.FilmItemFragmentDoc,
 };
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "query allFilmsWithVariables($first: Int!) {\n  allFilms(first: $first) {\n    edges {\n      node {\n        ...FilmItem\n      }\n    }\n  }\n}"): (typeof documents)["query allFilmsWithVariables($first: Int!) {\n  allFilms(first: $first) {\n    edges {\n      node {\n        ...FilmItem\n      }\n    }\n  }\n}"];
+export function graphql(source: "query allFilmsWithVariables($first: Int!) {\n  allFilms(first: $first) {\n    edges {\n      node {\n        id\n        ...FilmItem\n      }\n    }\n  }\n}"): (typeof documents)["query allFilmsWithVariables($first: Int!) {\n  allFilms(first: $first) {\n    edges {\n      node {\n        id\n        ...FilmItem\n      }\n    }\n  }\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

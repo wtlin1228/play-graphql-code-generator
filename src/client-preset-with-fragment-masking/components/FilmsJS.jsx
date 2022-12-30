@@ -1,23 +1,18 @@
 import { useQuery } from "@apollo/client";
-import { graphql, useFragment } from "../__generated__";
+import { useFragment } from "../__generated__";
+import {
+  AllFilmsWithVariablesDocument,
+  FilmItemFragmentDoc,
+} from "../__generated__/graphql";
 
-/** @typedef {import("../__generated__/graphql").FilmJS_FilmFragmentFragment} FilmJS_FilmFragmentFragment */
-
-const FilmJS_FilmFragment = graphql(/* GraphQL */ `
-  fragment FilmJS_FilmFragment on Film {
-    id
-    title
-    releaseDate
-    producers
-    director
-  }
-`);
+/** @typedef {import("../__generated__/graphql").FilmItemFragment} FilmItemFragment */
 
 /**
- * @type {React.FC<{ film: FilmJS_FilmFragmentFragment }>}
+ * @type {React.FC<{ film: FilmItemFragment }>}
  */
+
 const Film = (props) => {
-  const film = useFragment(FilmJS_FilmFragment, props.film);
+  const film = useFragment(FilmItemFragmentDoc, props.film);
   return (
     <div
       style={{
@@ -37,21 +32,8 @@ const Film = (props) => {
   );
 };
 
-const AllFilmsJSDocument = graphql(/* GraphQL */ `
-  query AllFilmsJSQuery($first: Int!) {
-    allFilms(first: $first) {
-      edges {
-        node {
-          id
-          ...Film_FilmFragment
-        }
-      }
-    }
-  }
-`);
-
-const FilmsJS = () => {
-  const { loading, data } = useQuery(AllFilmsJSDocument, {
+const Films = () => {
+  const { loading, data } = useQuery(AllFilmsWithVariablesDocument, {
     variables: { first: 2 },
   });
 
@@ -69,4 +51,4 @@ const FilmsJS = () => {
   );
 };
 
-export default FilmsJS;
+export default Films;

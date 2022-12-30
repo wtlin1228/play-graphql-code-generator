@@ -1326,6 +1326,7 @@ export const AllFilmsWithVariablesDocument = gql`
   allFilms(first: $first) {
     edges {
       node {
+        id
         ...FilmItem
       }
     }

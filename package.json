@@ -25,6 +25,7 @@
     "web-vitals": "2.1.4"
   },
   "scripts": {
+    "gen-type": "npm run gen-type:apollo-client & npm run gen-type:client-preset & npm run gen-type:fragment-masking",
     "gen-type:apollo-client": "graphql-codegen -c src/apollo-client-plugin/codegen.ts",
     "gen-type:client-preset": "graphql-codegen -c src/client-preset/codegen.ts",
     "gen-type:fragment-masking": "graphql-codegen -c src/client-preset-with-fragment-masking/codegen.ts",

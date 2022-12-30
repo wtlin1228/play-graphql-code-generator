@@ -1,23 +1,17 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { graphql, useFragment, FragmentType } from "../__generated__";
-
-const Film_FilmFragment = graphql(/* GraphQL */ `
-  fragment Film_FilmFragment on Film {
-    id
-    title
-    releaseDate
-    producers
-    director
-  }
-`);
+import { useFragment, FragmentType } from "../__generated__";
+import {
+  AllFilmsWithVariablesDocument,
+  FilmItemFragmentDoc,
+} from "../__generated__/graphql";
 
 type FilmProps = {
-  film: FragmentType<typeof Film_FilmFragment>;
+  film: FragmentType<typeof FilmItemFragmentDoc>;
 };
 
 const Film: React.FC<FilmProps> = (props) => {
-  const film = useFragment(Film_FilmFragment, props.film);
+  const film = useFragment(FilmItemFragmentDoc, props.film);
   return (
     <div
       style={{
@@ -37,21 +31,8 @@ const Film: React.FC<FilmProps> = (props) => {
   );
 };
 
-const AllFilmsDocument = graphql(/* GraphQL */ `
-  query AllFilmsQuery($first: Int!) {
-    allFilms(first: $first) {
-      edges {
-        node {
-          id
-          ...Film_FilmFragment
-        }
-      }
-    }
-  }
-`);
-
 const Films: React.FC = () => {
-  const { loading, data } = useQuery(AllFilmsDocument, {
+  const { loading, data } = useQuery(AllFilmsWithVariablesDocument, {
     variables: { first: 2 },
   });
 
