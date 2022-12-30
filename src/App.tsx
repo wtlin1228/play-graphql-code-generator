@@ -2,8 +2,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import Films from "./apollo-client-plugin/components/Films";
 import FilmsJS from "./apollo-client-plugin/components/FilmsJS";
-import FilmsWithMasking from "./client-preset-with-fragment-masking/components/FilmsWithMasking";
-import FilmsWithMaskingJS from "./client-preset-with-fragment-masking/components/FilmsWithMaskingJS";
+import FilmsWithFragmentMasking from "./client-preset-with-fragment-masking/components/Films";
+import FilmsJSWithFragmentMasking from "./client-preset-with-fragment-masking/components/FilmsJS";
 
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
         <h3>JS</h3>
         <FilmsJS />
         <h3>TS with Fragment Masking</h3>
-        <FilmsWithMasking />
+        <FilmsWithFragmentMasking />
         <h3>JS with Fragment Masking</h3>
-        <FilmsWithMaskingJS />
+        <FilmsJSWithFragmentMasking />
       </header>
     </div>
   );
