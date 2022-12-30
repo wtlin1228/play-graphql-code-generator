@@ -1,7 +1,7 @@
 import React from "react";
-import { useAllFilmsWithVariablesQuery } from "../__generated__/generated-types";
+import { useAllFilmsWithVariablesQuery } from "../__generated__/graphql";
 
-/** @typedef {import("../__generated__/generated-types").FilmItemFragment} FilmItemFragment */
+/** @typedef {import("../__generated__/graphql").FilmItemFragment} FilmItemFragment */
 
 /**
  * @type {React.FC<{ film: FilmItemFragment }>}

@@ -2,7 +2,7 @@ import React from "react";
 import {
   useAllFilmsWithVariablesQuery,
   FilmItemFragment,
-} from "../__generated__/generated-types";
+} from "../__generated__/graphql";
 
 const Film: React.FC<{ film: FilmItemFragment }> = ({ film }) => {
   return (

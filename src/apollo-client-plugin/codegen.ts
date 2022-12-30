@@ -6,7 +6,7 @@ const config: CodegenConfig = {
   documents: ["src/**/*.{gql,graphql}"],
   ignoreNoDocuments: true, // for better experience with the watcher
   generates: {
-    "src/apollo-client-plugin/__generated__/generated-types.ts": {
+    "src/apollo-client-plugin/__generated__/graphql.ts": {
       plugins: [
         "typescript",
         "typescript-operations",
