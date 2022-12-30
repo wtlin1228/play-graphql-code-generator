@@ -1,9 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Films from "./without-masking/components/Films";
-import FilmsJS from "./without-masking/components/FilmsJS";
-import FilmsWithMasking from "./with-masking/components/FilmsWithMasking";
-import FilmsWithMaskingJS from "./with-masking/components/FilmsWithMaskingJS";
+import Films from "./apollo-client-plugin/components/Films";
+import FilmsJS from "./apollo-client-plugin/components/FilmsJS";
+import FilmsWithMasking from "./client-preset-with-fragment-masking/components/FilmsWithMasking";
+import FilmsWithMaskingJS from "./client-preset-with-fragment-masking/components/FilmsWithMaskingJS";
 
 function App() {
   return (

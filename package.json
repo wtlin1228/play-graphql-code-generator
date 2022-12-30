@@ -25,8 +25,8 @@
     "web-vitals": "2.1.4"
   },
   "scripts": {
-    "gentype": "graphql-codegen",
-    "gentype:masking": "graphql-codegen -c codegen-with-masking.ts",
+    "gen-type:apollo-client": "graphql-codegen -c src/apollo-client-plugin/codegen.ts",
+    "gen-type:fragment-masking": "graphql-codegen -c src/client-preset-with-fragment-masking/codegen.ts",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
