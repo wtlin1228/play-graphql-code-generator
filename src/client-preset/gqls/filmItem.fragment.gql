@@ -1,0 +1,7 @@
+fragment FilmItem on Film {
+  id
+  title
+  releaseDate
+  producers
+  director
+}

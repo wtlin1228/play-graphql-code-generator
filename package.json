@@ -26,6 +26,7 @@
   },
   "scripts": {
     "gen-type:apollo-client": "graphql-codegen -c src/apollo-client-plugin/codegen.ts",
+    "gen-type:client-preset": "graphql-codegen -c src/client-preset/codegen.ts",
     "gen-type:fragment-masking": "graphql-codegen -c src/client-preset-with-fragment-masking/codegen.ts",
     "start": "react-scripts start",
     "build": "react-scripts build",
