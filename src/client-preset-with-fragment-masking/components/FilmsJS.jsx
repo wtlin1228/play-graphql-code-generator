@@ -16,7 +16,7 @@ const FilmJS_FilmFragment = graphql(/* GraphQL */ `
 /**
  * @type {React.FC<{ film: FilmJS_FilmFragmentFragment }>}
  */
-const FilmWithMasking = (props) => {
+const Film = (props) => {
   const film = useFragment(FilmJS_FilmFragment, props.film);
   return (
     <div
@@ -50,7 +50,7 @@ const AllFilmsJSDocument = graphql(/* GraphQL */ `
   }
 `);
 
-const FilmsWithMaskingJS = () => {
+const FilmsJS = () => {
   const { loading, data } = useQuery(AllFilmsJSDocument, {
     variables: { first: 2 },
   });
@@ -63,13 +63,10 @@ const FilmsWithMaskingJS = () => {
     <div>
       {data &&
         data.allFilms?.edges?.map(
-          (e) =>
-            e?.node && (
-              <FilmWithMasking film={e.node} key={`film-${e.node.id}`} />
-            )
+          (e) => e?.node && <Film film={e.node} key={`film-${e.node.id}`} />
         )}
     </div>
   );
 };
 
-export default FilmsWithMaskingJS;
+export default FilmsJS;
