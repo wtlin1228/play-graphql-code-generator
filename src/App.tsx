@@ -8,6 +8,7 @@ import FilmsWithFragmentMasking from "./client-preset-with-fragment-masking/comp
 import FilmsJSWithFragmentMasking from "./client-preset-with-fragment-masking/components/FilmsJS";
 
 import "./msw/demo/generate-a-film";
+import "./zod/demo/validate-a-film";
 
 function App() {
   return (
